@@ -1,0 +1,175 @@
+@charset "utf-8";
+ @font-face {
+    font-family: 'netflix';
+    src: url('fonts/NetflixSans_W_Md.woff2') format(opentype);
+ }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: 'netflix', Arial, Helvetica, sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-image: url('imgs/Netflix-Background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+header{
+    margin: auto;
+    padding: 24px 48px;
+}
+header > a > img{
+    margin-left: 9%;
+    width: 148px;
+    height: 40px;
+}
+main{
+    margin: auto;
+    width: 450px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 46px 68px;
+    border-radius: 5px;
+}
+main > h1{
+    margin-bottom: 28px;
+    font-family: 'netflix', Arial, Helvetica, sans-serif;
+}
+.login{
+    padding: 16px;
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(211, 211, 211, 0.451);
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'netflix', Arial, Helvetica, sans-serif;
+    color: white;
+}
+.login:focus{
+    outline: 2px solid white;
+}
+button{
+    width: 100%;
+    padding: 12px 0;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border: 0;
+    font-family: 'netflix', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.841);
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(172, 1, 1);
+    transition-duration: 0.3s;
+    
+}
+button:active{
+    background-color:rgb(136, 0, 0);
+    color: rgb(176, 176, 176);
+}
+#codigo-acesso{
+    background-color:rgba(128, 128, 128, 0.6);
+}
+#codigo-acesso:hover{
+    background-color:rgba(88, 88, 88, 0.688);
+}
+#codigo-acesso:active{
+    color: rgb(176, 176, 176);
+}
+#ou{
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 16px;
+}
+#alzheimer{
+    text-align: center;
+    margin-bottom: 25px;
+    
+}
+#alzheimer > a{
+    text-decoration: none;
+}
+#alzheimer > a:hover{
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.739);
+}
+a{
+    color: rgba(255, 255, 255, 0.9);
+}
+#lembre-se{
+    padding-left: 12px;
+}
+#convite{
+    color: rgba(255, 255, 255, 0.698);
+    margin-bottom: 16px;
+    margin-top: 20px;
+}
+footer > p > a{
+    text-decoration: none;
+    color: white;
+}
+footer > p > a:hover{
+    text-decoration: underline;
+}
+#protecao{
+    color: rgba(255, 255, 255, 0.653);
+    font-size: 12px;
+    margin-bottom: 150px;
+}
+#protecao > a{
+    color: #0071eb;
+}
+#protecao > a:hover{
+    text-decoration: underline;
+}
+#rodape-principal{
+    margin-top: 40px;
+    background-color: #000000b3;
+    padding: 80px 200px;
+}
+
+
+#rodape-principal > p{
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.677);
+}
+#rodape-principal > p > a{
+    color: rgba(255, 255, 255, 0.677);
+}
+ul{
+    list-style: none;
+    columns: 4;
+}
+#invisible{
+    color: rgba(255, 255, 255, 0);
+}
+
+ul > li{
+    padding: 10px;
+}
+ul > li > a{
+    color: rgba(255, 255, 255, 0.748);
+    font-size: 14px;
+}
+select{
+    
+    background-color: rgba(0, 0, 0, 0.753);
+    color: white;
+    padding: 6px 36px;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+select:focus{
+    outline: 2px solid white;
+}
+option{
+    background-color: white;
+    color: black;
+}
+
