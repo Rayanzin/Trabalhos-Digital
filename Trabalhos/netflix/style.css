@@ -144,6 +144,7 @@ footer > p > a:hover{
 ul{
     list-style: none;
     columns: 4;
+    max-width: 600px;
 }
 #invisible{
     color: rgba(255, 255, 255, 0);
