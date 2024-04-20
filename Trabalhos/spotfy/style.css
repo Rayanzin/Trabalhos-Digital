@@ -52,8 +52,8 @@ div > img{
     position: absolute;
     top: 40%;
     left: 50%;
-    width: 150px;
-    height: 150px;
+    width: 75%;
+    height: 60%;
     object-fit: cover;
     border-radius: 50%;
     transform: translate(-50% , -50%);
