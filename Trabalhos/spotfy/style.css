@@ -8,7 +8,7 @@
 }
 body{
     background-color: rgb(0, 0, 0);
-    height: 97vh;
+    height: 100vh;
     width: 100vw;
     display: flex; 
 }
@@ -61,6 +61,7 @@ header > a{
     background-color: rgba(26, 26, 26, 0.509);
     width: 420px;
     /* width: 22%; */
+    height: 794px;
     margin: 10px;
     border-radius: 10px;
     padding: 10px;
@@ -129,7 +130,7 @@ header > a{
     border: 1px solid rgb(209, 209, 209);
 }
 footer{
-    margin-top: 180px;
+    margin-top: 240px;
 }
 footer > div{
     margin-left: 20px;
@@ -177,9 +178,9 @@ footer > p:hover > #globo{
 }
 main{
     margin: 10px 10px 10px 0px; 
-    width:78%;      
+    /* width:78%; */
     border-radius: 10px;     
-    max-height: 93%;  
+    /* max-height: 93%; */
     background-image: linear-gradient(to bottom, rgb(30, 30, 30) , rgba(15, 15, 15, 0.503));                                                                                                                                                                                                                                                                                                                                                                                     
 }
 nav{
@@ -242,18 +243,17 @@ nav> a> svg{
     padding: 15px 30px;
     top: 12%;
 }
-main > div >  h2 {
+.flex > h2 {
     color: white;
-    padding: 10px 20px;
-    /* background-color: rgb(23, 23, 23); */
+    padding: 10px 20px 0px 20px;
     font-size: 1.3em;
     width: 92.8%;
 }
-main > div > h2:hover{
+.flex > h2:hover{
     text-decoration: underline;
     cursor: pointer;
 }
-#more{
+.more{
     display: inline-block;
     text-decoration: none;
     color: rgb(168, 168, 168);
@@ -263,77 +263,132 @@ main > div > h2:hover{
     padding-right: 10px;
     margin-left: -10px;
 }
-#more:hover{
+.more:hover{
     text-decoration: underline;
     cursor: pointer;
 }
-#flex{
+.flex{
     display: flex;
 }
 
-#artistas{
+#artistas, #albuns{
     margin-left: 30px;
     margin-top: 20px;
     display: flex;
 }
-#artistas > .artistas-personagens > img{
+#artistas > .artistas-personagens > img, .albuns-personagens > img{
     position: absolute;
     top: 40%;
     left: 50%;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 80%;
     transform: translate(-50%,-50%);
     object-fit: cover;
     padding: 10px;
     border-radius: 50%;
 }
-.artistas-personagens{
+.artistas-personagens, .albuns-personagens{
     position: relative;
     width: 200px;
     height: 250px;
     border-radius: 10px;
     cursor: pointer;
+    margin-bottom: 30px;
 }
-.artistas-personagens:hover{
+.artistas-personagens:hover, .albuns-personagens:hover{
     background-image:linear-gradient(to top, rgb(23, 23, 23), rgb(18, 18, 18));
 }
-#play{
-    position: relative;
+
+.play{
+    position: absolute;
     top: 65%;
     left: 65%;
-    position: absolute;
     width: 50px;
     height: 50px;
     background-color: rgba(0, 128, 0, 0);
     border-radius: 50%;
     padding: 10px;
 }
-.artistas-personagens:hover > #play{
+.artistas-personagens:hover > .play, .albuns-personagens:hover > .play{
     background-color: rgb(0, 157, 0);
-    transition-duration: 0.3s;
-    top: 60%;
+    transition-duration: 0.2s;
+    top: 55%;
     box-shadow: 2px 2px 5px black;
 }
-#play:hover{
+.play:hover{
     width: 52px;
     height: 52px;
 }
-#play > svg{
+.play > svg{
     display: none;
     transform: translate(50%,50%);
+   
 }
-.artistas-personagens:hover > #play > svg{ 
+.artistas-personagens:hover > .play > svg, .albuns-personagens:hover > .play > svg{ 
     display: block;
 }
 
-#artistas > .artistas-personagens > h3{
+#artistas > .artistas-personagens > h3, .albuns-personagens > h3{
     color: white;
     font-weight: normal;
     margin-top: 190px;
     margin-bottom: 10px;
     margin-left: 10px;
 }
-#artistas  > .artistas-personagens > p{
+#artistas  > .artistas-personagens > p, .albuns-personagens > p{
     color: rgb(159, 159, 159);
     margin-left: 10px;
 }
+.albuns-personagens{
+    margin-bottom: 40px;
+}
+.albuns-personagens > img{
+    border-radius: 20px;
+    top: 45%;
+}
+.albuns-personagens > h3{
+    margin-top: 210px;
+    margin-bottom: 0;
+}
+.foot{
+    margin-right: 84px;
+    margin-bottom: 32px;
+    margin-left: 50px;
+}
+.redes > a > svg{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(73, 73, 73);
+    padding: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.redes > a:hover > svg{
+    background-color: rgb(117, 117, 117);
+}
+#rede{
+    margin-left: 170px;
+}
+ul{
+    list-style: none;
+    color: rgb(149, 149, 149);  
+}
+ul > p{
+    color: white;
+    font-weight: bold;
+}
+ul > li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+ul > p, li{
+    margin-bottom: 10px;
+}
+/* hr{
+    margin: auto;
+    width: 95%;
+    margin-bottom: 20px;
+}
+#par{
+    color: rgb(156, 156, 156);
+} */
