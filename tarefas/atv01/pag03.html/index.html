@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades JS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <main>
+        <h1>Atividades de Lógica com estruturas condicionais</h1>
+        <!-- 3) -->
+        <form>
+            <p>3- Para saber se um ano é bissexto.</p>
+            <label for="bissexto">Digite um Ano</label>
+            <input type="number" name="ano" id="bissexto" required>
+            <input type="button" value="Enviar" id="button" onclick="enviar()">
+            <div id="res">Resultado</div>
+        </form>
+        <div id="gap"><a href="../pag02.html/index.html"><img src="../img/arrow_back_24dp_FILL0_wght400_GRAD0_opsz24 (1).png" alt="seta"></a>
+            <a href="../pag04.html/index.html"><img src="../img/arrow_forward_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="seta"></a>
+        </div>
+    </main>
+        <script>
+            function enviar(){
+                let resultado = document.getElementById('res')
+                let ano = document.getElementById('bissexto').value
+                if (ano % 400 == 0 || ano % 4 == 0 && ano % 100 != 0){
+                    resultado.innerText = ano > 2024? 'Será um ano bissexto': 'foi um ano bissexto'
+                } else {
+                    resultado.innerText = ano > 2024? 'Não será um ano bissexto': 'Não foi um ano bisexto'
+                }
+            }
+        </script>
+</body>
+</html>

@@ -20,24 +20,30 @@ main{
 }
 main h1{
     text-align: center;
-    padding: 50px;
+    padding: 30px;
     text-shadow: 1px 1px 1px white;
 }
 main p{
     font-size: 20px;
 }
+
 form label{
     display: block;
     font-size: 20px;
     margin-top: 10px;
 }
-#real{
+form input{
     width: 70%;
-    padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding: 5px;
+    outline: none;
+    font-weight: bold;
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 10px;
 }
-form input{
+form #button{
     width: 29%;
     padding: 5px;
     outline: none;
@@ -45,6 +51,11 @@ form input{
     background-color: lightgray;
     border: 1px solid black;
     border-radius: 10px;
+    cursor: pointer;
+}
+#button:hover{
+    background-color: gray;
+    transition: 0.3s;
 }
 #res{
     background-color: lightgray;
@@ -53,10 +64,24 @@ form input{
     padding: 5px;
     border-radius: 10px;
     width: 100%;
+    margin-bottom: 20px;
 }
-span{
-    margin-top: 10px;
+#gap{
+    display: flex;
+    gap: 90%;
 }
-span:hover{
+a{
+    display: inline-block;
+    width: 20px;
+    height: 20px; 
+    background-color: lightgray;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+a > img{
+    width: 100%;
+}
+a:hover{
     background-color: gray;
+    transition: 0.3s;
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade JS</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        form input{
+            width: 100%;
+        }
+        form #button{
+            display: block;
+            margin-inline-start: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Atividades de Lógica com estruturas condicionais</h1>
+        <!-- 2) -->
+        <form>
+            <p>2- diga as 3 medidas de um triângulo para saber se ele é equilatero, isósceles ou escaleno.</p>
+            <label for="medida1">medida 1:</label>
+            <input type="number" name="n1" id="medida1" required>
+            <label for="medida2">Medida 2:</label>
+            <input type="number" name="n2" id="medida2" required>
+            <label for="medida3">Medida 3:</label>
+            <input type="number" name="n3" id="medida3" required>
+            <input type="button" id="button" value="Enviar" onclick="enviar()">
+            <div id="res">Resultado</div>
+        </form>
+        <div id="gap">
+            <a href="../pag01.html/index.html">
+                <img src="../img/arrow_back_24dp_FILL0_wght400_GRAD0_opsz24 (1).png"
+                    alt="seta">
+                </a>
+            <a href="../pag03.html/index.html" alt="seta">
+                <img src="../img/arrow_forward_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="seta">
+            </a>
+        </div>
+    </main>
+    <script>
+        function enviar(){
+            let resultado = document.getElementById('res')
+            let n1 = Number(document.getElementById('medida1').value)
+            let n2 = Number(document.getElementById('medida2').value)
+            let n3 = Number(document.getElementById('medida3').value)
+            if (n1 == n2 && n2 == n3){
+                resultado.innerText = 'Triângulo Equilatero'
+                // n1 != n2 && n2 == n3 || n1 == n2 && n2 != n3 || n1 == n3
+            } else if(n1 == n2 || n2 == n3 || n1 == n3){
+                resultado.innerText = 'Triângulo Isósceles'
+            } else{
+                resultado.innerText = 'Triângulo Escaleno'
+            } 
+        }
+    </script>
+</body>
+
+</html>

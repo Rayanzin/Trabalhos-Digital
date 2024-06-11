@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade JS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Atividades de Lógica com estruturas condicionais</h1>
+        <!-- 5) -->
+        <form>
+            <p>5- Para saber se um número é par ou ímpar.</p>
+            <label for="par-impar">Digite um número</label>
+            <input type="number" name="impopa" id="par-impar" required>
+            <input type="button" value="Enviar" id="button" onclick="enviar()">
+            <div id="res">Resultado</div>
+        </form>
+        <div id="gap"><a href="../pag04.html/index.html"><img
+                    src="../img/arrow_back_24dp_FILL0_wght400_GRAD0_opsz24 (1).png" alt="seta"></a>
+            <a href="../pag06.html/inde.html"><img src="../img/arrow_forward_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                    alt="seta"></a>
+        </div>
+    </main>
+    <script>
+        function enviar() {
+            let resultado = document.getElementById('res')
+            let n = Number(document.getElementById('par-impar').value)
+            if (n % 2 == 0) {
+                resultado.innerText = `O número ${n} é par`
+            } else {
+                resultado.innerText = `O número ${n} é ímpar`
+            }
+        }
+    </script>
+</body>
+
+</html>
