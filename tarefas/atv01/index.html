@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>Atividades de Lógica com estruturas condicionais</h1>
+            <!-- 1) -->
+            <form>
+                <p>1- Para saber se um número é positivo, negativo ou zero.</p>
+                <label for="real">Digite um número</label>
+                <input type="number" name="real" id="real" required>
+                <input type="button" value="Enviar" onclick="enviar()">
+                <div id="res">Resultado</div>
+            </form>
+            <span><img src="img/arrow_back_24dp_FILL0_wght400_GRAD0_opsz24 (1).png" alt="seta"></span>
+            <span><img src="img/arrow_forward_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="seta"></span>
+        </section>
+    </main>
+    <script>
+        // 1
+        function enviar() {
+            let n = Number(document.getElementById('real').value)
+            let resultado = document.getElementById('res')
+            if (n > 0) {
+                resultado.innerText = `O Número: ${n} é Positivo`
+            } else if (n == 0) {
+                resultado.innerText = `O Número: ${n} é Neutro`
+            } else {
+                resultado.innerText = `O Número: ${n} é Negativo`
+            }
+        }
+
+    </script>
+</body>
+
+</html>
