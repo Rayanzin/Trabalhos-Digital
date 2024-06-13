@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade JS</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="pag06.css">
+
+</head>
+
+<body>
+    <main>
+        <h1>Atividades de Lógica com estruturas condicionais</h1>
+        <!-- 6) -->
+        <p>6- "leve mais e pague menos" , em compras acima de 10 unidades ganhe 10% de desconto.</p>
+        <form>
+
+            <section id="produto">
+                <img src="../img/picanha.jpeg" alt="make-the-L">
+                <p>R$1,50</p>
+                <div id="flex">
+                    <input type="button" value="-" class="button" onclick="subtrair()">
+                    <p id="resultado">0 UN</p>
+                    <input type="button" value="+" class="button" onclick="somar()">
+
+                </div>
+            </section>
+            <section id="total">
+                <table>
+                    <tr>
+                        <th colspan="2">Detalhes do pagamento</th>
+                    </tr>
+                    <tr>
+                        <td>Total dos produtos:</td>
+                        <td>R$</td>
+                        <td id="valor-produtos">0</td>
+                    </tr>
+                    <tr>
+                        <td>Desconto:</td>
+                        <td>R$</td>
+                        <td id="desconto">0</td>
+                    </tr>
+                    <tr>
+                        <td class="pagamento">Total de pagamento:</td>
+                        <td class="pagamento">R$</td>
+                        <td class="pagamento" id="total-produtos">0</td>
+                    </tr>
+                </table>
+            </section>
+        </form>
+        <div id="gap"><a href="../pag05/index.html"><img
+                    src="../img/arrow_back_24dp_FILL0_wght400_GRAD0_opsz24 (1).png" alt="seta"></a>
+            <a href="../pag07/index.html"><img src="../img/arrow_forward_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                    alt="seta"></a>
+        </div>
+    </main>
+    <script>
+        let mais = 0
+        const preço = 1.5
+        
+        function atualizarResultado() {
+            let total = document.getElementById('valor-produtos');
+            let somaprodutos = mais * preço
+            total.innerText = `${(somaprodutos).toFixed(2).replace('.', ',')}`;
+            descontos = somaprodutos / 100 * 10
+             let final = document.getElementById('total-produtos')
+             if ( mais < 10){
+                final.innerText = `${somaprodutos.toFixed(2).replace('.', ',')}`
+             }else{
+                 final.innerText = `${somaprodutos - descontos}`.replace('.', ',')
+             }
+                
+            paguemenos()
+        }
+        function somar() {
+            let res = document.getElementById('resultado')
+            mais++
+            res.innerText = `${mais} UN`
+            atualizarResultado()
+
+        }
+        function subtrair() {
+            let res = document.getElementById('resultado')
+            if (mais > 0) {
+                mais--
+            }
+            res.innerText = `${mais} UN`
+            atualizarResultado()
+        }
+        function paguemenos() {
+            let desc = document.getElementById('desconto')
+            if (mais >= 10) {
+                desc.innerText = `${descontos.toFixed(2).replace('.', ',')}`
+                }
+                else {
+                    desc.innerText = '0'
+                }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade JS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <main>
+        <h1>Atividades de Lógica com estruturas condicionais</h1>
+        <!-- 7) -->
+        <form>
+            <p>7- Dê uma nota de 0-100 e o sistema à converterá em letras de A-E</p>
+            <label for="nota">Digite uma nota</label>
+            <input type="number" name="notas" id="nota" value="0" required >
+            <input type="button" value="Enviar" id="button" onclick="enviar()">
+            <div id="res">Resultado</div>
+        </form>
+        <div id="gap"><a href="../pag06/inde.html"><img
+                    src="../img/arrow_back_24dp_FILL0_wght400_GRAD0_opsz24 (1).png" alt="seta"></a>
+            <a href="../pag08/index.html"><img src="../img/arrow_forward_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                    alt="seta"></a>
+        </div>
+        <script>
+            function enviar(){
+                let note = Number(document.getElementById('nota').value)
+                let resultado = document.getElementById('res')
+                if (note <= 100 &&  note >= 80){
+                    resultado.innerText = 'A'
+                } else if( note <= 79 && note >= 60){
+                    resultado.innerText = 'B'
+                } else if ( note <= 59 && note >= 40){
+                    resultado.innerText = 'C'
+                } else if ( note <= 39 && note >= 20){
+                    resultado.innerText = 'D'
+                } else if ( note <= 19 && note >= 0){
+                    resultado.innerText = 'E'
+                } else {
+                    resultado.innerText = 'Insira uma nota válida'
+                }
+            }
+        </script>
+    </main>
+</body>
+</html>
