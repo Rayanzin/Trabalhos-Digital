@@ -24,7 +24,7 @@
         <h1>Atividades de Lógica com estruturas condicionais</h1>
         <!-- 10) -->
         <form>
-            <p>10- Para sabe quanto do imposto do amor você terá que pagar com base na tabela do imposto de renda, digite sua renda mensal.</p>
+            <p>10- Para saber quanto do imposto do amor você terá que pagar com base na tabela do imposto de renda, digite sua renda mensal.</p>
             <table>
                 <tr>
                     <td>De: </td>
@@ -73,10 +73,11 @@
         function enviar(){
             let resultado = document.getElementById('res')
             let renda = Number(document.getElementById('imposto').value)
-            let desconto = renda / 100 * 7.5
+            let desconto
             if (renda <= 24511.92){
                 resultado.innerText = 'isento de imposto'
             } else if(renda >= 24511.93 && renda <= 33919.80){
+                desconto = renda / 100 * 7.5
                 resultado.innerText = `Imposto de 7,5% = R$${desconto.toFixed(2).replace('.',',')}`
             } else if(renda >= 33919.81 && renda <= 45012.60){
                 desconto = renda / 100 * 15
