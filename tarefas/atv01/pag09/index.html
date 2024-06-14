@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade JS</title>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
     <main>
         <h1>Atividades de Lógica com estruturas condicionais</h1>
         <!-- 9) -->
         <form>
-            <p>9- </p>
-            <label for="letra">Digite uma letra</label>
-            <input type="text" name="letras" id="letra" placeholder="a-z" required>
+            <p>9- Para saber qual dia da semana é</p>
+            <label for="letra">Digite um número de 1-7</label>
+            <input type="number" name="semana" id="week" placeholder="1-7" required>
             <input type="button" value="Enviar" id="button" onclick="enviar()">
             <div id="res">Resultado</div>
         </form>
@@ -24,7 +26,28 @@
         </div>
     </main>
     <script>
-
+        function enviar() {
+            let resultado = document.getElementById('res')
+            let dia = Number(document.getElementById('week').value)
+            if (dia == 1) {
+                resultado.innerText = 'É Domingo'
+            } else if (dia == 2) {
+                resultado.innerText = 'É segunda-feira'
+            } else if (dia == 3) {
+                resultado.innerText = 'É Terça-feira'
+            } else if (dia == 4) {
+                resultado.innerText = 'É Quarta-feira'
+            } else if (dia == 5) {
+                resultado.innerText = 'É Quinta-feira'
+            } else if (dia == 6) {
+                resultado.innerText = 'É Sexta-feira'
+            } else if (dia == 7) {
+                resultado.innerText = 'É Sabado'
+            } else {
+                resultado.innerText = 'Não é um número válido'
+            }
+        }
     </script>
 </body>
+
 </html>

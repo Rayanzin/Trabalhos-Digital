@@ -5,16 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade JS</title>
     <link rel="stylesheet" href="../style.css">
-    
+    <style>
+
+        table{
+            border-collapse: collapse;
+            text-align: center;
+            margin: auto;
+            margin-top: 20px;
+        }
+        table td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
     <main>
         <h1>Atividades de Lógica com estruturas condicionais</h1>
         <!-- 10) -->
         <form>
-            <p>10- </p>
-            <label for="letra">Digite uma letra</label>
-            <input type="text" name="letras" id="letra" placeholder="a-z" required>
+            <p>10- Para sabe quanto do imposto do amor você terá que pagar com base na tabela do imposto de renda, digite sua renda mensal.</p>
+            <table>
+                <tr>
+                    <td>De: </td>
+                    <td>R$0</td>
+                    <td>Até:</td>
+                    <td>R$24.511,92</td>
+                    <td>Isento</td>
+                </tr>
+                <tr>
+                    <td>De:</td>
+                    <td>R$24.511,93</td>
+                    <td>Até: </td>
+                    <td>R$33.919,80</td>
+                    <td>7,5%</td>
+                </tr>
+                <tr>
+                    <td>De:</td>
+                    <td>R$33.919,81</td>
+                    <td>Até: </td>
+                    <td>R$45.012,60</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>De: </td>
+                    <td>R$45.012,61</td>
+                    <td>Até: </td>
+                    <td>R$55.976,16</td>
+                    <td>22,5%</td>
+                </tr>
+                <tr>
+                    <td>Acima De: </td>
+                    <td colspan="3">R$55.976,16</td>
+                    <td>27,5%</td>
+                </tr>
+            </table>
+            <label for="imposto">Digite sua renda</label>
+            <input type="text" name="impostor" id="imposto" placeholder="EX: 25000,00" required>
             <input type="button" value="Enviar" id="button" onclick="enviar()">
             <div id="res">Resultado</div>
         </form>
@@ -22,5 +69,26 @@
                     alt="seta"></a>
         </div>
     </main>
+    <script>
+        function enviar(){
+            let resultado = document.getElementById('res')
+            let renda = Number(document.getElementById('imposto').value)
+            let desconto = renda / 100 * 7.5
+            if (renda <= 24511.92){
+                resultado.innerText = 'isento de imposto'
+            } else if(renda >= 24511.93 && renda <= 33919.80){
+                resultado.innerText = `Imposto de 7,5% = R$${desconto.toFixed(2).replace('.',',')}`
+            } else if(renda >= 33919.81 && renda <= 45012.60){
+                desconto = renda / 100 * 15
+                resultado.innerText = `Imposto de 15% = R$${desconto.toFixed(2).replace('.',',')}`
+            }  else if(renda >= 45012.61 && renda <= 55976.16){
+                desconto = renda / 100 * 22.5
+                resultado.innerText = `Imposto de 22,5% = R$${desconto.toFixed(2).replace('.',',')}`
+            }  else if(renda > 55976.16){
+                desconto = renda / 100 * 27.5
+                resultado.innerText = `Imposto de 27,5% = R$${desconto.toFixed(2).replace('.',',')}`
+            }
+        }
+    </script>
 </body>
 </html>
