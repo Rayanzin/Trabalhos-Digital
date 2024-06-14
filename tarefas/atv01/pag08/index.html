@@ -15,30 +15,27 @@
         <form>
             <p>8- Para saber se uma letra é vogal ou consoante</p>
             <label for="letra">Digite uma letra</label>
-            <input type="text" name="letras" id="letra" pattern="[A-Za-z]+" placeholder="A-Z" required>
+            <input type="text" name="letras" id="letra" placeholder="a-z" required>
             <input type="button" value="Enviar" id="button" onclick="enviar()">
             <div id="res">Resultado</div>
         </form>
         <div id="gap"><a href="../pag07/index.html"><img src="../img/arrow_back_24dp_FILL0_wght400_GRAD0_opsz24 (1).png"
                     alt="seta"></a>
-            <a href="../pag09/inde.html"><img src="../img/arrow_forward_24dp_FILL0_wght400_GRAD0_opsz24.png"
+            <a href="../pag09/index.html"><img src="../img/arrow_forward_24dp_FILL0_wght400_GRAD0_opsz24.png"
                     alt="seta"></a>
         </div>
     </main>
     <script>
 
         function enviar() {
-            let A = 'a'
-            let E = 'E'
-            let I = 'I'
-            let O = 'O'
-            let U = 'U'
             let resultado = document.getElementById('res')
-            let valor = document.getElementById('letra').value
-            if (valor == A || E || I || O || U ) {
+            let valor = document.getElementById('letra').value.toLowerCase()
+            if (valor == 'a' || valor == 'e' || valor == 'i' || valor == 'o' || valor == 'u' ) {
                 resultado.innerText = 'É uma vogal'
-            } else {
+            } else if(valor >= 'a' && valor <= 'z'){
                 resultado.innerText = 'É uma consoante'
+            } else {
+                resultado.innerText = 'Não é uma letra'
             }
         }
     </script>

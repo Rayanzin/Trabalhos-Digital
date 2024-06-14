@@ -66,10 +66,11 @@
             total.innerText = `${(somaprodutos).toFixed(2).replace('.', ',')}`;
             descontos = somaprodutos / 100 * 10
              let final = document.getElementById('total-produtos')
+             let precofinal = somaprodutos - descontos
              if ( mais < 10){
-                final.innerText = `${somaprodutos.toFixed(2).replace('.', ',')}`
+                final.innerText = somaprodutos.toFixed(2).replace('.', ',')
              }else{
-                 final.innerText = `${somaprodutos - descontos}`.replace('.', ',')
+                 final.innerText = precofinal.toFixed(2).replace('.', ',')
              }
                 
             paguemenos()
