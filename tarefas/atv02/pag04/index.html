@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="res"></div>
+    <script>
+        let n = Number(prompt('Digite um número'))
+        if (n <= 1) {
+            res.innerText = `${n} Não é primo`
+        } else if (n == 2 || n == 3) {
+            res.innerText = `${n} é primo`
+        } else if (n % 2 == 0 || n % 3 == 0) {
+            res.innerText = `${n} Não é primo`
+        } else {
+            res.innerText = `Sei não man`
+        }
+
+    </script>
+</body>
+
+</html>
