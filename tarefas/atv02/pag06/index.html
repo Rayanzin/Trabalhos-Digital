@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res"></div>
+    <script>
+        let quantidade = Number(prompt('Quantos números deseja inserir?'))
+        let n
+        let soma = 0
+        for(let i = 1;i <= quantidade; i++){
+           n = Number(prompt('Digite um número'))
+           soma += n
+        }
+        res.innerText = `Quantia de números = ${quantidade} `
+        res.innerText += `
+        resultado = ${soma}`
+        res.innerText += `
+        Média = ${soma /  quantidade}`
+    </script>
+</body>
+</html>

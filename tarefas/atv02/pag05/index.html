@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="pr-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="res"> </div>
     <script>
         let n = Number(prompt('digite um número'))
-        let resultado = 1
-        for(let i = 1;i <= n;i++){
-            resultado += i
-        }
-        res.innerHTML = `soma do fibonacci é ${resultado}`
+        let valor = 0
+        let proximo = 1
+        let anterior = 0
+            for (let i = 1; i <= n; i++) {
+                valor = valor + proximo
+                anterior = proximo
+                proximo = valor + anterior
+                res.innerHTML += `soma do fibonacci é ${anterior} + ${valor} = ${proximo}<br>`
+            }
+        
     </script>
 </body>
+
 </html>
