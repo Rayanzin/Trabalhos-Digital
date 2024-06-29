@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <div id="res"></div>
+    <script>
+        let n = Number(prompt('Digite um número'))
+        let calculo = 0
+        for(let i = 1;i <= 10;i++){
+            calculo = n*i
+            res.innerText += `${n} x ${i} = ${calculo}
+            `
+        }
+    </script>
+</body>
+</html>
