@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>porcentagem de alunos</title>
+</head>
+<body>
+    <div id="res"></div>    
+    <script>
+        let ativos = 19
+        let presentes = 11
+        function porCento(faltaram){
+            return res.innerHTML = `Faltaram ${faltaram.toFixed(2)}% dos alunos`
+        }
+        porCento((ativos - presentes) / ativos * 100)
+    </script>
+</body>
+</html>
