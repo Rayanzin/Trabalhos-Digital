@@ -10,17 +10,54 @@
 <body>
     <div id="res"></div>
     <script>
-        let n = Number(prompt('Digite um número'))
-        if (n <= 1) {
-            res.innerText = `${n} Não é primo`
-        } else if (n == 2 || n == 3) {
-            res.innerText = `${n} é primo`
-        } else if (n % 2 == 0 || n % 3 == 0) {
-            res.innerText = `${n} Não é primo`
-        } else {
-            res.innerText = `Sei não man`
+        // teste de primo sem funções
+        // let contar = 0
+        // for (let i = numero; i > 0; i--) {
+        //     if (numero % i == 0) {
+        //         count++
+        //     }
+        // }
+        // if (count == 2) {
+        //     document.write('É primo')
+        // } else {
+        //     document.write('não é primo')
+        // }
+
+
+
+
+
+//  teste de primo com função
+        function testePrimo(numero) {
+            let count = 0
+            for (let i = numero; i > 0; i--) {
+                if (numero % i == 0) {
+                    count++
+                }
+            }
+            if (count == 2) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
+        function contarPrimo(numero) {
+            let count = 0
+            let primos = [];
+            for (let i = numero; i > 0; i--) {
+                if (testePrimo(i)) {
+                    primos.push(i)
+                    count++
+                }
+            }
+            document.write(`Existem ${count} números primos de 1 a ${numero}: [${primos.reverse()}]`)
+        
+        }
+        document.write('<br>')
+        contarPrimo(30)
+        document.write('<br>')
+        contarPrimo(100)
     </script>
 </body>
 
