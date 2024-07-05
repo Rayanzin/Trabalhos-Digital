@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="res"></div>
+    <script>
+        function quantidadeDeAcessos(hora) {
+            let contagemmanha = 0
+            let contagemtarde = 0
+            let contagemnoite = 0
+            for (let i = 10; i < 20; i++) {
+                if (hora >= 5 && hora <= 11){
+                    hora++
+                    contagemmanha++
+                }else if(hora >= 12 && hora <= 17){
+                    hora++
+                    contagemtarde++
+                } else if(hora >= 18 && hora <= 23){
+                    hora++
+                    contagemnoite++
+                } else if( hora >= 0 && hora <= 4){
+                    hora++
+                    contagemnoite++
+                }
+            }
+            res.innerHTML += `Acessou ${contagemmanha} Vezes pela manhã, ${contagemtarde} pela tarde e ${contagemnoite} pela noite` 
+        }
+        quantidadeDeAcessos(10)
+
+    </script>
+</body>
+
+</html>

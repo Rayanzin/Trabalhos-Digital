@@ -6,11 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-
+    <div id="res"></div>
     <script>
-        function media(){
-            
+        // pesoteorica = 2
+        // pesopratica = 1
+        function media(notaTeorica = 0, notaPratica1 = 0, notaPratica2 = 0){
+            mediaFinal = ((notaTeorica * 2)+notaPratica1 + notaPratica2)/4
+            return res.innerHTML = `A Média final é ${mediaFinal}`
         }
+        media(9, 8, 8)
     </script>
 </body>
 </html>
