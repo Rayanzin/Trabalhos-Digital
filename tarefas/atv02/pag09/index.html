@@ -9,8 +9,21 @@
     <div id="res"></div>
     <script>
         let n = prompt('Digite um número')
-        res.innerText = `o número ${n} possui ${n.length} Digitos`
-        let numero = Number(n)
+       let i = 0
+       let test = true
+       let count = 0
+        while(test){
+            if(n[i]){
+                count++
+            } else{
+                test = false
+            }
+            i++
+        }
+        document.write(`${n} numero tem ${count} dígitos`)
+        
+        // let numero = Numero(prompt(`digite um número`))
+        
     </script>
 </body>
 </html>

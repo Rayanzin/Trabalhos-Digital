@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>palindromom</title>
+    <title>palindromo</title>
 </head>
 <body>
     <div id="res"></div>
     <script>
-        res.innerText = `Qui djabé issu man?`
+        let palavra = prompt(`Digite uma palvra`)
+        let j = palavra.length-1
+        let teste = true
+        for(let i = 0;i < palavra.lenght; i++){
+            if(palavra[i] != palavra[j--]){
+                teste = false
+            }
+        }
+        document.write(`${teste ? 'É palindromo' : 'Não é palindromo'}`)
+        
     </script>
 </body>
 </html>
