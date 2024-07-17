@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        function criptografiaCesar(texto, deslocamento) {
+            let cesarCorno = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",]
+            if (typeof texto == 'string' && typeof deslocamento == 'number') {
+                let comp = texto.length
+                for(let i = 0; i >= comp; i++)
+                return
+            } else {
+                return "Função aceita apenas strings e números."
+            }
+
+        }
+        document.write(criptografiaCesar('ABC', 1))
+    </script>
 </body>
+
 </html>
