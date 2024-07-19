@@ -9,18 +9,21 @@
 
 <body>
     <script>
-        function criptografiaCesar(texto, deslocamento) {
-            let cesarCorno = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",]
-            if (typeof texto == 'string' && typeof deslocamento == 'number') {
-                let comp = texto.length
-                for(let i = 0; i >= comp; i++)
-                return
-            } else {
-                return "Função aceita apenas strings e números."
-            }
-
+        function criptografiaCesar(texto, des) {
+    if (typeof texto == 'string' && typeof des == 'number') {
+        let comp = texto.length - 1
+        let code 
+        let decode = ''
+        for (let i = 0; i <= comp; i++) {
+            code = ((texto[i].charCodeAt() -65 + des) % 26) +65
+            decode = decode + String.fromCharCode(code)         
         }
-        document.write(criptografiaCesar('ABC', 1))
+        return console.log(decode)
+    } else {
+        return "Função aceita apenas strings e números."
+    }
+}
+criptografiaCesar('Hello, World!', 5)
     </script>
 </body>
 
