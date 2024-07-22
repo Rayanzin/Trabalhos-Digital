@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function criptografiaCesar(texto, des) {
+    if (typeof texto == 'string' && typeof des == 'number') {
+        let comp = texto.length - 1
+        let code 
+        let decode = ''
+        for (let i = 0; i <= comp; i++) {
+            code = ((texto[i].charCodeAt() -65 + des) % 26) +65
+            decode = decode + String.fromCharCode(code)         
+        }
+        return console.log(decode)
+    } else {
+        return "Função aceita apenas strings e números."
+    }
+}
+criptografiaCesar('Hello, World!', 5)
+    </script>
+</body>
+
+</html>
