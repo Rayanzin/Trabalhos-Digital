@@ -8,11 +8,15 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+:root{
+    --cor1:#0084f7;
+    --cor2:#0466bd;
+}
 body{
     background-color: #ede;
 }
 header {
-    background-color: #0084f7;
+    background-color: var(--cor1);
     padding: 16px 80px;
 
     & .pesquisar {
@@ -50,6 +54,22 @@ main{
         font-size: 36px;
         margin-bottom: 36px;
         color: #232323;
+        display: flex;
+        justify-content: space-between;
+        & button{
+            background-color: var(--cor1);
+            height: 46px;
+            padding: 0px 26px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.329);
+            color: white;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: bolder;
+            &:hover{
+                background-color: var(--cor2);
+            }
+        }
     }
     & ul{
         display: grid;
@@ -60,12 +80,25 @@ main{
             padding: 16px;
             box-shadow: 0px 5px 10px #00000015;
             border-radius: 5px;
-            & h5{
-                font-size: 18px;
-                margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            & div{
+                & h5{
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                }
+                & p{
+                    color: #777;
+                }
             }
-            & p{
-                color: #777;
+            & div:nth-child(2){
+                text-align: right;
+
+                & box-icon:hover{
+                    fill: rgb(210, 1, 1);
+                    cursor: pointer;
+                }
             }
         }
     }

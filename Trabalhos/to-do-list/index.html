@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lista de tarefas</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
     <header>
         <div class="pesquisar">
@@ -14,30 +16,62 @@
         </div>
     </header>
     <main>
-        <h3>Minhas tarefas</h3>
+        <h3>
+            Minhas tarefas
+            <button>Nova Tarefa</button>
+        </h3>
         <ul>
             <li>
-                <h5>pendurar quadro</h5>
-                <p>fazer dois furos na parede para colocar as buchas e os parafusos e pendurar o quadro</p>
+                <div>
+                    <h5>pendurar quadro</h5>
+                    <p>fazer dois furos na parede para colocar as buchas e os parafusos e pendurar o quadro</p>
+                </div>
+                <div>
+                    <box-icon name='trash' ></box-icon>
+                </div>
             </li>
             <li>
-                <h5>Comer</h5>
-                <p>Em casa</p>
+                <div>
+                    <h5>Comer</h5>
+                    <p>Em casa</p>
+                </div>
+
+                <div>
+                    <box-icon name='trash' ></box-icon>
+                </div>
+
             </li>
             <li>
-                <h5>Reunião com cliente</h5>
-                <p>ir na KF veiculos se reunir com fabricio</p>
+                <div>
+                    <h5>Reunião com cliente</h5>
+                    <p>ir na KF veiculos se reunir com fabricio</p>
+                </div>
+                <div>
+                    <box-icon name='trash' ></box-icon>
+                </div>
             </li>
             <li>
-                <h5>Estudar</h5>
-                <p>Entender melhor variaveis e constantes</p>
+                <div>
+                    <h5>Estudar</h5>
+                    <p>Entender melhor variaveis e constantes</p>
+                </div>
+                <div>
+                    <box-icon name='trash' ></box-icon>
+                </div>
             </li>
             <li>
-                <h5>comprar capacete</h5>
-                <p>ir na loja e comprar capacete que eu ja escolhi e não ceder ao consumismo</p>
+                <div>
+                    <h5>comprar capacete</h5>
+                    <p>ir na loja e comprar capacete que eu ja escolhi e não ceder ao consumismo</p>
+                </div>
+                <div>
+                    <box-icon name='trash' ></box-icon>
+                </div>
             </li>
         </ul>
     </main>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="js/index.js"></script>
 </body>
+
 </html>
