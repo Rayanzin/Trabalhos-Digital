@@ -18,7 +18,7 @@
     <main>
         <h3>
             Minhas tarefas
-            <button>Nova Tarefa</button>
+            <button onclick="novaTarefa()">Nova Tarefa</button>
         </h3>
         <ul>
             <li>
@@ -70,6 +70,18 @@
             </li>
         </ul>
     </main>
+    <div id="overlay" onclick="fecharModal()"></div>
+    <div class="modal">
+        <form id="criar">
+            <h3>Nova Task <box-icon name="x" onclick="fecharModal()"></box-icon></h3>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" placeholder="Digite o titulo" required>
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" placeholder="Digite a descrição" required></textarea>
+            <button type="submit">Criar</button>
+        </form>
+    </div>
+
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="js/index.js"></script>
 </body>

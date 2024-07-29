@@ -8,13 +8,16 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-:root{
-    --cor1:#0084f7;
-    --cor2:#0466bd;
+
+:root {
+    --cor1: #0084f7;
+    --cor2: #0466bd;
 }
-body{
+
+body {
     background-color: #ede;
 }
+
 header {
     background-color: var(--cor1);
     padding: 16px 80px;
@@ -28,7 +31,8 @@ header {
             height: 46px;
             border-radius: 5px;
             padding-left: 10px;
-            &:focus + h6{
+
+            &:focus+h6 {
                 color: black;
                 top: 5px;
                 transform: translateY(0);
@@ -37,7 +41,7 @@ header {
         }
 
         & h6 {
-            position: absolute; 
+            position: absolute;
             top: 50%;
             left: 10px;
             transform: translateY(-50%);
@@ -48,15 +52,18 @@ header {
         }
     }
 }
-main{
+
+main {
     padding: 50px 80px;
-    & h3{
+
+    & h3 {
         font-size: 36px;
         margin-bottom: 36px;
         color: #232323;
         display: flex;
         justify-content: space-between;
-        & button{
+
+        & button {
             background-color: var(--cor1);
             height: 46px;
             padding: 0px 26px;
@@ -66,16 +73,19 @@ main{
             text-transform: uppercase;
             cursor: pointer;
             font-weight: bolder;
-            &:hover{
+
+            &:hover {
                 background-color: var(--cor2);
             }
         }
     }
-    & ul{
+
+    & ul {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 16px;
-        & li{
+
+        & li {
             background-color: white;
             padding: 16px;
             box-shadow: 0px 5px 10px #00000015;
@@ -83,21 +93,105 @@ main{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            & div{
-                & h5{
+
+            & div {
+                & h5 {
                     font-size: 18px;
                     margin-bottom: 10px;
                 }
-                & p{
+
+                & p {
                     color: #777;
                 }
             }
-            & div:nth-child(2){
+
+            & div:nth-child(2) {
                 text-align: right;
 
-                & box-icon:hover{
-                    fill: rgb(210, 1, 1);
+                & box-icon:hover {
+                    fill: rgb(255, 0, 0);
                     cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.modal {
+    background-color: white;
+    border-radius: 10px;
+    padding: 16px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+    &.modalon{
+        opacity: 1;
+        visibility: visible;
+    }
+    
+
+    & form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        & label {
+            padding: 10px 0px;
+        }
+        & input{
+            background-color: #ccc9c9;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 0, 0, 0);
+            width: 100%;
+        }
+        & textarea{
+            padding: 10px;
+            background-color: #ccc9c9;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 0, 0, 0);
+        }
+        & button{
+            padding: 10px;
+            border-radius: 10px;
+            background-color: var(--cor1);
+            color: white;
+            transition: .2s;
+            cursor: pointer;
+            &:hover{
+                background-color: var(--cor2);
+            }
+        }
+        & h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & box-icon {
+                cursor: pointer;
+                &:hover {
+                    fill: red;
                 }
             }
         }
