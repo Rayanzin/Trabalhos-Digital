@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lista de tarefas</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsivo.css">
 </head>
 
 <body>
@@ -20,14 +21,14 @@
             Minhas tarefas
             <button onclick="novaTarefa()">Nova Tarefa</button>
         </h3>
-        <ul>
+        <ul id="lista">
             <li>
                 <div>
                     <h5>pendurar quadro</h5>
                     <p>fazer dois furos na parede para colocar as buchas e os parafusos e pendurar o quadro</p>
                 </div>
                 <div>
-                    <box-icon name='trash' ></box-icon>
+                    <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir()"></box-icon>
                 </div>
             </li>
             <li>
@@ -35,9 +36,8 @@
                     <h5>Comer</h5>
                     <p>Em casa</p>
                 </div>
-
                 <div>
-                    <box-icon name='trash' ></box-icon>
+                    <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir()"></box-icon>
                 </div>
 
             </li>
@@ -47,7 +47,7 @@
                     <p>ir na KF veiculos se reunir com fabricio</p>
                 </div>
                 <div>
-                    <box-icon name='trash' ></box-icon>
+                    <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir()"></box-icon>
                 </div>
             </li>
             <li>
@@ -56,7 +56,7 @@
                     <p>Entender melhor variaveis e constantes</p>
                 </div>
                 <div>
-                    <box-icon name='trash' ></box-icon>
+                    <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir()"></box-icon>
                 </div>
             </li>
             <li>
@@ -65,7 +65,7 @@
                     <p>ir na loja e comprar capacete que eu ja escolhi e não ceder ao consumismo</p>
                 </div>
                 <div>
-                    <box-icon name='trash' ></box-icon>
+                    <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir()"></box-icon>
                 </div>
             </li>
         </ul>
@@ -80,6 +80,13 @@
             <textarea id="descricao" placeholder="Digite a descrição" required></textarea>
             <button type="submit">Criar</button>
         </form>
+    </div>
+    <div id="cancelar">
+        <h3>Deseja realmente apagar esta tarefa?</h3>
+        <div>
+            <button onclick="excluirTarefa()">Confirmar</button>
+            <button onclick="fecharModal()">Cancelar</button>
+        </div>
     </div>
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

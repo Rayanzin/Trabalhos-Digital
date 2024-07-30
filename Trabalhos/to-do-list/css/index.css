@@ -12,6 +12,8 @@
 :root {
     --cor1: #0084f7;
     --cor2: #0466bd;
+    --cor3: red;
+    --cor4: rgb(194, 7, 7);
 }
 
 body {
@@ -55,7 +57,8 @@ header {
 
 main {
     padding: 50px 80px;
-
+    transition: .5s;
+    transition-timing-function: ease;
     & h3 {
         font-size: 36px;
         margin-bottom: 36px;
@@ -109,7 +112,7 @@ main {
                 text-align: right;
 
                 & box-icon:hover {
-                    fill: rgb(255, 0, 0);
+                    fill: var(--cor3);
                     cursor: pointer;
                 }
             }
@@ -145,20 +148,23 @@ main {
     opacity: 0;
     visibility: hidden;
     transition: .2s;
-    &.modalon{
+
+    &.modalon {
         opacity: 1;
         visibility: visible;
     }
-    
+
 
     & form {
         display: flex;
         flex-direction: column;
         padding: 10px;
+
         & label {
             padding: 10px 0px;
         }
-        & input{
+
+        & input {
             background-color: #ccc9c9;
             color: black;
             padding: 10px;
@@ -166,32 +172,95 @@ main {
             border: 2px solid rgba(0, 0, 0, 0);
             width: 100%;
         }
-        & textarea{
+
+        & textarea {
             padding: 10px;
             background-color: #ccc9c9;
             margin-bottom: 10px;
             border-radius: 10px;
             border: 2px solid rgba(0, 0, 0, 0);
         }
-        & button{
+
+        & button {
             padding: 10px;
             border-radius: 10px;
             background-color: var(--cor1);
             color: white;
             transition: .2s;
             cursor: pointer;
-            &:hover{
+
+            &:hover {
                 background-color: var(--cor2);
             }
         }
+
         & h3 {
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             & box-icon {
                 cursor: pointer;
+
                 &:hover {
-                    fill: red;
+                    fill: var(--cor3);
+                }
+            }
+        }
+    }
+}
+
+#cancelar {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    & h3 {
+        width: 220px;
+        text-align: center;
+    }
+
+    & div {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+        & button {
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            transition: .2s;
+
+            &:nth-child(1) {
+                background-color: var(--cor1);
+
+                &:hover {
+                    background-color: var(--cor2);
+                }
+            }
+
+            &:nth-child(2) {
+                background-color: var(--cor3);
+
+                &:hover {
+                    background-color: var(--cor4);
                 }
             }
         }
