@@ -35,19 +35,19 @@ let tarefas = [
         descricao: "fazer dois furos na parede para colocar as buchas e os parafusos e pendurar o quadro"
     },
     {
-        titulo: "Comer",
-        descricao: "Em casa"
+        titulo: "",
+        descricao: ""
     },
     {
-        titulo: "Reunião com cliente",
-        descricao: "ir na KF veiculos se reunir com fabricio"
+        titulo: "",
+        descricao: ""
     },
     {
-        titulo: "Estudar",
-        descricao: "Entender melhor variaveis e constantes"
+        titulo: "",
+        descricao: ""
     },
     {
-        titulo: "comprar capacete",
-        descricao: "ir na loja e comprar capacete que eu ja escolhi e não ceder ao consumismo"
+        titulo: "",
+        descricao: ""
     },
 ]
