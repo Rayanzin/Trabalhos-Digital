@@ -60,13 +60,13 @@ function listarTarefas() {
     for (let i = 0; i <= tarefas.length - 1; i++) {
         lista.innerHTML += `
         <li>
-        <div>
-        <h5>${tarefas[i].titulo}</h5>
-        <p>${tarefas[i].descricao}</p>
-        </div>
-        <div>
-        <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir(${i})"></      box-icon>
-        </div>
+            <div>
+                <h5>${tarefas[i].titulo}</h5>
+                <p>${tarefas[i].descricao}</p>
+            </div>
+            <div>
+                <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir(${i})"></      box-icon>
+            </div>
         </li>`
     }
 }
@@ -75,6 +75,39 @@ function excluirTarefa() {
     fecharModal()
     listarTarefas()
 }
+function filtrar(){
+    let li = lista.getElementsByTagName("li")
+    for(let i = 0; i < tarefas.length; i++)
+    if(tarefas[i].titulo.indexOf(pesquisar.value) != -1 ){
+        li[i].style.backGroundColor = 'blue'
+        console.log('oi');
+    }else{
+        console.log('nada');
+    }
+}
+// function filtrar(){
+//    let filter;
+//    let li;
+//    let text;
+//    let span;
+//    filter =  pesquisar.value.toUpperCase()
+//    li = lista.getElementsByTagName('li')
+//     for(i = 0;i < lista.length;i++){
+//         tittle = li[i].getElementsByTagName("h5")
+//         text = tittle.content || tittle.innerText
+//         if(text.toUpperCase.indexOf(filter) != -1){
+//             li[i].style.display = ''
+//             span = li[i]
+//             if(span){
+//                 span.innerHTML = text.replace(new RegExp(filter, "gi"),(match)=>{
+//                     return `<strong>${match}</strong>`
+//                 })
+//             }else{
+//                 li[i].style.display = 'none'
+//             }
+//         }
+//     }
+// }
 listarTarefas()
 
 
