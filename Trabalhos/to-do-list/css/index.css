@@ -59,6 +59,7 @@ main {
     padding: 50px 80px;
     transition: .5s;
     transition-timing-function: ease;
+
     & h3 {
         font-size: 36px;
         margin-bottom: 36px;
@@ -66,7 +67,7 @@ main {
         display: flex;
         justify-content: space-between;
 
-        & button {
+        /* & button {
             background-color: var(--cor1);
             height: 46px;
             padding: 0px 26px;
@@ -79,7 +80,7 @@ main {
 
             &:hover {
                 background-color: var(--cor2);
-            }
+            } */
         }
     }
 
@@ -118,7 +119,7 @@ main {
             }
         }
     }
-}
+
 
 #overlay {
     width: 100%;
@@ -181,34 +182,35 @@ main {
             border: 2px solid rgba(0, 0, 0, 0);
         }
 
-        & button {
-            padding: 10px;
-            border-radius: 10px;
-            background-color: var(--cor1);
-            color: white;
-            transition: .2s;
+    }
+    & button{
+        width: 100%;
+    }
+    & h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & box-icon {
             cursor: pointer;
 
             &:hover {
-                background-color: var(--cor2);
-            }
-        }
-
-        & h3 {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            & box-icon {
-                cursor: pointer;
-
-                &:hover {
-                    fill: var(--cor3);
-                }
+                fill: var(--cor3);
             }
         }
     }
 }
+ .addtarefa {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--cor1);
+    color: white;
+    transition: .2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--cor2);
+    }}
 
 #cancelar {
     position: fixed;
@@ -239,6 +241,7 @@ main {
         display: flex;
         gap: 20px;
         justify-content: center;
+
         & button {
             padding: 10px;
             border-radius: 10px;

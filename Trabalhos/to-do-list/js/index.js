@@ -13,41 +13,69 @@ document.addEventListener('keyup', (e) => {
         fecharModal()
     }
 })
-function desejaExcluir() {
+let li;
+function desejaExcluir(item) {
+    li = item
     overlay.classList.add("active");
     cancelar.classList.add("active");
 }
 
-let div
-lista.addEventListener('click', function (event) {
-    if (event.target.classList.contains('btnExcluir')) {
-        let deletar = event.target.parentElement;
-        div = deletar.parentNode
-    }
-})
-function excluirTarefa() {
-    lista.removeChild(div);
-    fecharModal()
-}
+
+
 let tarefas = [
     {
-        titulo: "pendurar quadro",
-        descricao: "fazer dois furos na parede para colocar as buchas e os parafusos e pendurar o quadro"
-    },
-    {
-        titulo: "Comer",
-        descricao: "Em casa"
-    },
-    {
-        titulo: "Reunião com cliente",
-        descricao: "ir na KF veiculos se reunir com fabricio"
+        titulo: "Ir para casa",
+        descricao: "Tomar banho e almoçar"
     },
     {
         titulo: "Estudar",
-        descricao: "Entender melhor variaveis e constantes"
+        descricao: "Aperfeiçoar conhecimento em javascript"
     },
     {
-        titulo: "comprar capacete",
-        descricao: "ir na loja e comprar capacete que eu ja escolhi e não ceder ao consumismo"
+        titulo: "jogar",
+        descricao: "Jogar algum jogo, de preferencia algum que não me dê rage"
     },
+    {
+        titulo: "Assistir",
+        descricao: "Procurar algum filme para assistir com a muié"
+    },
+    {
+        titulo: "Dormir",
+        descricao: "Dormir, porque infelizmente sou CLT"
+    }
 ]
+
+function adicionarTarefa() {
+    if (titulo.value != '' && descricao.value != '') {
+        tarefas.push({ titulo: titulo.value, descricao: descricao.value })
+        console.log(tarefas);
+        listarTarefas()
+        fecharModal()
+        titulo.value = ''
+        descricao.value = ''
+    }
+}
+function listarTarefas() {
+    lista.innerHTML = ''
+    for (let i = 0; i <= tarefas.length - 1; i++) {
+        lista.innerHTML += `
+        <li>
+        <div>
+        <h5>${tarefas[i].titulo}</h5>
+        <p>${tarefas[i].descricao}</p>
+        </div>
+        <div>
+        <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir(${i})"></      box-icon>
+        </div>
+        </li>`
+    }
+}
+function excluirTarefa() {
+    tarefas.splice(li, 1);
+    fecharModal()
+    listarTarefas()
+}
+listarTarefas()
+
+
+

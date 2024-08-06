@@ -19,56 +19,9 @@
     <main>
         <h3>
             Minhas tarefas
-            <button onclick="novaTarefa()">Nova Tarefa</button>
+            <button class="addtarefa" onclick="novaTarefa()">Nova Tarefa</button>
         </h3>
-        <ul id="lista">
-            <li>
-                <div>
-                    <h5></h5>
-                    <p></p>
-                </div>
-                <div>
-                    <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir()"></box-icon>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h5></h5>
-                    <p></p>
-                </div>
-                <div>
-                    <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir()"></box-icon>
-                </div>
-
-            </li>
-            <li>
-                <div>
-                    <h5></h5>
-                    <p></p>
-                </div>
-                <div>
-                    <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir()"></box-icon>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h5></h5>
-                    <p></p>
-                </div>
-                <div>
-                    <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir()"></box-icon>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h5></h5>
-                    <p></p>
-                </div>
-                <div>
-                    <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir()"></box-icon>
-                </div>
-            </li>
-        </ul>
+        <ul id="lista"></ul>
     </main>
     <div id="overlay" onclick="fecharModal()"></div>
     <div class="modal">
@@ -78,9 +31,9 @@
             <input type="text" id="titulo" placeholder="Digite o titulo" required>
             <label for="descricao">Descrição</label>
             <textarea id="descricao" placeholder="Digite a descrição" required></textarea>
-            <button type="submit">Criar</button>
+            <button type="submit" class="addtarefa" onclick="adicionarTarefa()">Criar</button>
         </form>
-    </div>
+    </div>  
     <div id="cancelar">
         <h3>Deseja realmente apagar esta tarefa?</h3>
         <div>
@@ -88,7 +41,6 @@
             <button onclick="fecharModal()">Cancelar</button>
         </div>
     </div>
-
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="js/index.js"></script>
 </body>
