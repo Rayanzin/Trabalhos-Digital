@@ -13,15 +13,6 @@ document.addEventListener('keyup', (e) => {
         fecharModal()
     }
 })
-let li;
-function desejaExcluir(item) {
-    li = item
-    overlay.classList.add("active");
-    cancelar.classList.add("active");
-}
-
-
-
 let tarefas = [
     {
         titulo: "Ir para casa",
@@ -44,11 +35,15 @@ let tarefas = [
         descricao: "Dormir, porque infelizmente sou CLT"
     }
 ]
-
+let li;
+function desejaExcluir(item) {
+    li = item
+    overlay.classList.add("active");
+    cancelar.classList.add("active");
+}
 function adicionarTarefa() {
     if (titulo.value != '' && descricao.value != '') {
         tarefas.push({ titulo: titulo.value, descricao: descricao.value })
-        console.log(tarefas);
         listarTarefas()
         fecharModal()
         titulo.value = ''
@@ -75,41 +70,19 @@ function excluirTarefa() {
     fecharModal()
     listarTarefas()
 }
-function filtrar(){
-    console.clear()
+function filtrar() {
+    // console.clear()
     let pes = pesquisar.value
-    for(let i = 0; i < tarefas.length; i++)
-        if(tarefas[i].titulo.toUpperCase().replace(' ','').search(pes.toUpperCase().replace(' ','')) != -1 ){
-            console.log(`titulos que tem a(s) letra ${pesquisar.value}`);
-            lista.style.display='grid'
-        }else{
-            console.log('titulos que nao bateram');
-            lista.style.display='none'
+    li = lista.getElementsByTagName('li')
+    for (let i = 0; i < tarefas.length; i++)
+        if (tarefas[i].titulo.toUpperCase().search(pes.toUpperCase()) != -1) {
+            // console.log(`titulos que tem a(s) letra ${pesquisar.value}`);
+            li[i].style.display = 'flex'
+        } else {
+            // console.log('titulos que nao bateram');
+            li[i].style.display = 'none'
         }
 }
-// function filtrar(){
-//    let filter;
-//    let li;
-//    let text;
-//    let span;
-//    filter =  pesquisar.value.toUpperCase()
-//    li = lista.getElementsByTagName('li')
-//     for(i = 0;i < lista.length;i++){
-//         tittle = li[i].getElementsByTagName("h5")
-//         text = tittle.content || tittle.innerText
-//         if(text.toUpperCase.indexOf(filter) != -1){
-//             li[i].style.display = ''
-//             span = li[i]
-//             if(span){
-//                 span.innerHTML = text.replace(new RegExp(filter, "gi"),(match)=>{
-//                     return `<strong>${match}</strong>`
-//                 })
-//             }else{
-//                 li[i].style.display = 'none'
-//             }
-//         }
-//     }
-// }
 listarTarefas()
 
 
