@@ -76,14 +76,16 @@ function excluirTarefa() {
     listarTarefas()
 }
 function filtrar(){
-    let li = lista.getElementsByTagName("li")
+    console.clear()
+    let pes = pesquisar.value
     for(let i = 0; i < tarefas.length; i++)
-    if(tarefas[i].titulo.indexOf(pesquisar.value) != -1 ){
-        li[i].style.backGroundColor = 'blue'
-        console.log('oi');
-    }else{
-        console.log('nada');
-    }
+        if(tarefas[i].titulo.toUpperCase().replace(' ','').search(pes.toUpperCase().replace(' ','')) != -1 ){
+            console.log(`titulos que tem a(s) letra ${pesquisar.value}`);
+            lista.style.display='grid'
+        }else{
+            console.log('titulos que nao bateram');
+            lista.style.display='none'
+        }
 }
 // function filtrar(){
 //    let filter;
