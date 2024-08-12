@@ -60,7 +60,7 @@ function listarTarefas() {
                 <p>${tarefas[i].descricao}</p>
             </div>
             <div>
-                <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir(${i})"></      box-icon>
+                <box-icon class="btnExcluir" name='trash' onclick="desejaExcluir(${i})"></box-icon>
             </div>
         </li>`
     }
