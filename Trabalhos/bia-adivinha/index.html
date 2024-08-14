@@ -13,25 +13,42 @@
         <section id="bia">
             <h1>Em que número <span>Bia</span> está pensando?</h1>
             <div>
-                <img src="imgs/bia-pensando.png" alt="bia">
+                <img id="img" src="imgs/bia-pensando.png" alt="bia">
+                <svg id="errado" width="56" height="56" viewBox="0 0 56 56" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.154327" y="5.65686" width="8" height="70" transform="rotate(-45 0.154327 5.65686)"
+                        fill="#FF0000" />
+                    <rect width="8" height="70"
+                        transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 55.1544 5.65686)" fill="#FF0000" />
+                </svg>
+                <svg id="choro" width="12" height="17" viewBox="0 0 12 17" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 11C12 14.3137 9.31371 17 6 17C2.68629 17 0 14.3137 0 11C0 7.68629 6 0 6 0C6 0 12 7.68629 12 11Z"
+                        fill="#6AFFFF" />
+                </svg>
+                <svg id="boca" width="32" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M24 14L32 11C30.5 7.33333 25.3 -5.85733e-07 16.5 -1.35505e-06C7.7 -2.12437e-06 1.83333 7 3.0598e-07 10.5L7.5 14C8.83333 12.1667 12.5 8.5 16.5 8.5C20.5 8.5 23.1667 12.1667 24 14Z"
+                        fill="#FCB079" />
+                </svg>
+                <div id="gambiarra"></div>
             </div>
         </section>
         <section>
             <input type="number" id="chutar" required>
+            <div id="acertou"></div>
+            <div id="perdeu"></div>
+           <form><button type="submit" id="btn">Tentar novamente</button></form>
             <div id="palpite">
                 <p>Seus palpites:</p>
-                <div id="palpites">1 - 2 - 3</div>
+                <div id="palpites"></div>
             </div>
         </section>
-        <!-- <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0.154327" y="5.65686" width="8" height="70" transform="rotate(-45 0.154327 5.65686)" fill="#FF0000"/>
-            <rect width="8" height="70" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 55.1544 5.65686)" fill="#FF0000"/>
-            </svg>
 
-            <svg width="12" height="17" viewBox="0 0 12 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 11C12 14.3137 9.31371 17 6 17C2.68629 17 0 14.3137 0 11C0 7.68629 6 0 6 0C6 0 12 7.68629 12 11Z" fill="#6AFFFF"/>
-                </svg>
-                 -->
+
+
+
         <script src="index.js"></script>
     </main>
 </body>
