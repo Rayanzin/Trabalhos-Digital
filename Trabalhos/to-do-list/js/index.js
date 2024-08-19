@@ -35,6 +35,8 @@ let tarefas = [
         descricao: "Dormir, porque infelizmente sou CLT"
     }
 ]
+// let tarefas = JSON.parse(localStorage.getItem("tarefas")) || []
+
 let li;
 function desejaExcluir(item) {
     li = item
@@ -50,6 +52,7 @@ function adicionarTarefa() {
         descricao.value = ''
     }
 }
+ 
 function listarTarefas() {
     lista.innerHTML = ''
     for (let i = 0; i <= tarefas.length - 1; i++) {
