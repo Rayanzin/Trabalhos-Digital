@@ -5,12 +5,11 @@ fetch(urlR).then(function (response) {
         addRegioes(data)
     })
 })
-let opt = document.getElementsByTagName('option')
 function addRegioes(dados) {
     for (let i = 0; i <= dados.length - 1; i++) {
         sel.innerHTML +=
          `
-            <option>
+            <option value="${i}">
                 ${dados[i].sigla}
             </option>
          `
@@ -18,12 +17,11 @@ function addRegioes(dados) {
 }
 
 function buscarRegiao(){
-    console.log(opt.value);
-    if(opt.value == "N"){
+    console.log(sel.value);
+    if(sel.value == "0"){
         console.log('deu');
     }else{
         console.log('deu n');
-        
     }
 }
 
