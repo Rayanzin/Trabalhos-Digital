@@ -1,3 +1,4 @@
+// mostra cada regiao
 let urlR = `https://servicodados.ibge.gov.br/api/v1/localidades/regioes/1|2|3|4|5`
 fetch(urlR).then(function (response) {
     response.json().then(function (data) {
@@ -46,10 +47,10 @@ function ufPorRegiao(dados) {
     }
 
 }
+// mostra cada municipio
 function buscarMunicipios() {
     let estado = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf.value}/municipios`
     console.log(uf.value);
-    
     fetch(estado).then(function (response) {
         response.json().then(function (data) {
             cidades(data)
