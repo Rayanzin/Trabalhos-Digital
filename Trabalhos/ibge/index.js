@@ -1,73 +1,70 @@
 let urlR = `https://servicodados.ibge.gov.br/api/v1/localidades/regioes/1|2|3|4|5`
 fetch(urlR).then(function (response) {
     response.json().then(function (data) {
-        console.log(data);
         addRegioes(data)
     })
 })
 function addRegioes(dados) {
     for (let i = 0; i <= dados.length - 1; i++) {
         sel.innerHTML +=
-         `
-            <option value="${i}">
-                ${dados[i].sigla}
+            `
+            <option value="${i+1}">
+                ${dados[i].nome}
             </option>
          `
     }
 }
+// mostra cada uf das regioes
+let aux;
+function buscarRegiao() {
+    municipios.style.display = 'none'
+    let UFNE = `https://servicodados.ibge.gov.br/api/v1/localidades/regioes/${sel.value}/estados`
+    fetch(UFNE).then(function (response) {
+        response.json().then(function (data) {
+            ufPorRegiao(data)
+        })
+    })
+    aux = codigosUf[sel.value-1]
+}
+let norte = [11, 12, 13, 14, 15, 16, 17]
+let nordeste = [21, 22, 23, 24, 25, 26, 27, 28, 29]
+let suldeste = [31, 32, 33, 35]
+let sul = [41, 42, 43]
+let centro = [50, 51, 52, 53]
+let codigosUf = [norte, nordeste, suldeste, sul, centro]
 
-function buscarRegiao(){
-    console.log(sel.value);
-    if(sel.value == "0"){
-        console.log('deu');
-    }else{
-        console.log('deu n');
+function ufPorRegiao(dados) {
+    uf.style.display = 'block'
+    uf.innerHTML = ''
+    for (let i = 0; i <= dados.length - 1; i++) {
+        uf.innerHTML +=
+            `
+            <option value="${aux[i]}">
+                ${dados[i].nome}
+            </option>
+         `
+    }
+
+}
+function buscarMunicipios() {
+    let estado = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf.value}/municipios`
+    console.log(uf.value);
+    
+    fetch(estado).then(function (response) {
+        response.json().then(function (data) {
+            cidades(data)
+        })
+    })
+}
+function cidades(dados) {
+    municipios.style.display = 'block'
+    municipios.innerHTML = ''
+    for (let i = 0; i <= dados.length - 1; i++) {
+        municipios.innerHTML +=
+            `
+            <option>
+                ${dados[i].nome}
+            </option>
+         `
     }
 }
-
-// function ufNorte() {
-//     let UFN = `https://servicodados.ibge.gov.br/api/v1/localidades/regioes/1/estados`
-//     fetch(UFN).then(function (response) {
-//         response.json().then(function (data) {
-//             console.log(data);
-//         })
-//     })
-//     for (let i = 0; i <= dados.length - 1; i++) {
-//         uf.innerHTML += `
-//             <option id="${i}">
-//                 ${dados[i].nome}
-//             </option>
-//             `
-//     }
-// }
-
-// let UFNE = `https://servicodados.ibge.gov.br/api/v1/localidades/regioes/2/estados`
-//     fetch(UFNE).then(function (response) {
-//         response.json().then(function (data) {
-//             console.log(data);
-//             addRegioes(data)
-//         })
-//     })
-
-//     let UFSE = `https://servicodados.ibge.gov.br/api/v1/localidades/regioes/3/estados`
-//     fetch(UFSE).then(function (response) {
-//         response.json().then(function (data) {
-//             console.log(data);
-//             addRegioes(data)
-//         })
-//     })
-
-//     let UFS = `https://servicodados.ibge.gov.br/api/v1/localidades/regioes/4/estados`
-//     fetch(UFS).then(function (response) {
-//         response.json().then(function (data) {
-//             console.log(data);
-//             addRegioes(data)
-//         })
-//     })
-//     let UFCO = `https://servicodados.ibge.gov.br/api/v1/localidades/regioes/5/estados`
-//     fetch(UFCO).then(function (response) {
-//         response.json().then(function (data) {
-//             console.log(data);
-//             addRegioes(data)
-//         })
-//     })
