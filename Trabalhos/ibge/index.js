@@ -18,14 +18,16 @@ function addRegioes(dados) {
 // mostra cada uf das regioes
 let aux;
 function buscarRegiao() {
-    municipios.style.display = 'none'
-    let UFNE = `https://servicodados.ibge.gov.br/api/v1/localidades/regioes/${sel.value}/estados`
-    fetch(UFNE).then(function (response) {
+    cidades.style.display = 'none'
+    cidade.style.display = 'none'
+    let UFs = `https://servicodados.ibge.gov.br/api/v1/localidades/regioes/${sel.value}/estados`
+    fetch(UFs).then(function (response) {
         response.json().then(function (data) {
             ufPorRegiao(data)
         })
     })
     aux = codigosUf[sel.value-1]
+
 }
 let norte = [11, 12, 13, 14, 15, 16, 17]
 let nordeste = [21, 22, 23, 24, 25, 26, 27, 28, 29]
@@ -53,15 +55,16 @@ function buscarMunicipios() {
     console.log(uf.value);
     fetch(estado).then(function (response) {
         response.json().then(function (data) {
-            cidades(data)
+            PegarCidades(data)
         })
     })
 }
-function cidades(dados) {
-    municipios.style.display = 'block'
-    municipios.innerHTML = ''
+function PegarCidades(dados) {
+    cidade.style.display = 'block'
+    cidades.innerHTML = ''
+    
     for (let i = 0; i <= dados.length - 1; i++) {
-        municipios.innerHTML +=
+        cidades.innerHTML +=
             `
             <option>
                 ${dados[i].nome}

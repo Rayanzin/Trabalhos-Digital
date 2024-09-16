@@ -33,6 +33,9 @@ div {
 #uf{
     display: none;
 }
-#municipios{
+#cidades{
+    display: none;
+}
+#cidade{
     display: none;
 }
